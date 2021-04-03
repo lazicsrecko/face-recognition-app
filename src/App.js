@@ -96,7 +96,7 @@ function App() {
   }
   return (
     <div className="App">
-      {/* <Particles className="particles" /> */}
+      <Particles className="particles" />
       <Navigation isSignedIn={isSignedIn} onRouteChange={onRouteChange} />
       {route === 'home' ?
         <div>
