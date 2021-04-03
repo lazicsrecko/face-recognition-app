@@ -7,13 +7,9 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Signin from './components/Signin/Signin';
-import Register from  './components/Register/Register';
+import Register from './components/Register/Register';
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
 
-const clarifai = new Clarifai.App({
-  apiKey: '9e2b8beeaf164b688c3f6df9edfe8dba'
-})
 
 function App() {
   const [userInput, setUserInput] = useState('');
@@ -21,6 +17,18 @@ function App() {
   const [box, setBox] = useState({});
   const [route, setRoute] = useState('signin');
   const [isSignedIn, setSignedIn] = useState(false);
+  const [user, setUser] = useState({});
+
+  const loadUser = (user) => {
+    setUser({
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      password: user.password,
+      entries: user.entries,
+      joined: new Date()
+    })
+  }
 
   const onInputChange = (event) => {
     setUserInput(event.target.value);
@@ -45,14 +53,42 @@ function App() {
 
   const onSubmit = () => {
     setImageUrl(userInput);
-    clarifai.models.predict(Clarifai.FACE_DETECT_MODEL, userInput)
-      .then(response => displayFaceBox(calculateFaceLocation(response)))
+    fetch('https://fast-tor-15674.herokuapp.com/imageurl', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userInput: userInput
+      })
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response) {
+          fetch('https://fast-tor-15674.herokuapp.com/image', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              id: user.id
+            })
+          })
+            .then(response => response.json())
+            .then(count => {
+              setUser({ ...user, entries: count })
+            })
+            .catch(err => console.log(err));
+        }
+        displayFaceBox(calculateFaceLocation(response));
+      })
       .catch(err => console.log(err))
   }
 
   const onRouteChange = (route) => {
-    if(route === 'signout') {
+    if (route === 'signout') {
+      setUserInput('');
+      setImageUrl('');
+      setBox({});
+      setRoute('signin')
       setSignedIn(false);
+      setUser({});
     } else if (route === 'home') {
       setSignedIn(true);
     }
@@ -65,15 +101,15 @@ function App() {
       {route === 'home' ?
         <div>
           <Logo />
-          <Rank />
+          <Rank userName={user.name} userEntries={user.entries} />
           <ImageLinkForm onInputChange={onInputChange} onButtonSubmit={onSubmit} />
           <FaceRecognition box={box} imageUrl={imageUrl} />
         </div>
         :
         (
-          route === 'register' 
-          ? <Register onRouteChange={onRouteChange} /> 
-          : <Signin onRouteChange={onRouteChange} />
+          route === 'register'
+            ? <Register loadUser={loadUser} onRouteChange={onRouteChange} />
+            : <Signin loadUser={loadUser} onRouteChange={onRouteChange} />
         )
       }
     </div>
