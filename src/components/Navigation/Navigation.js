@@ -9,12 +9,7 @@ const Navigation = (props) => {
             </nav>
         )
     } else {
-        return (
-            <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <p onClick={() => onRouteChange('signin')} className='p3 link dim underline pa3 pointer'>Sign In</p>
-                <p onClick={() => onRouteChange('register')} className='p3 link dim underline pa3 pointer'>Register</p>
-            </nav>
-        )
+        return null
     }
 }
 

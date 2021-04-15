@@ -96,11 +96,9 @@ function App() {
   }
   return (
     <div className="App">
-      <Particles className="particles" />
       <Navigation isSignedIn={isSignedIn} onRouteChange={onRouteChange} />
       {route === 'home' ?
         <div>
-          <Logo />
           <Rank userName={user.name} userEntries={user.entries} />
           <ImageLinkForm onInputChange={onInputChange} onButtonSubmit={onSubmit} />
           <FaceRecognition box={box} imageUrl={imageUrl} />
