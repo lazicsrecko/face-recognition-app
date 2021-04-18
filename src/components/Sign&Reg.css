@@ -1,0 +1,141 @@
+
+.center-div{
+    background-image: url("../../../public/looping-bacground.jpg");
+    background-repeat: repeat;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px){
+    .center-div{
+        background-color: #060606;
+        background-image: none;
+    }
+}
+
+.inner-div{
+    padding: 20px;
+    border-radius: 15%;
+    background-color: #060606;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    animation-name: inner-div-load;
+    animation-duration: 1s;
+}
+
+@keyframes inder-div-load{
+    0% {background-color: transparent;}
+}
+
+.cred-input{
+    
+    font-size: large;
+    margin: 15px;
+    
+    color: white;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid;
+    border-color: darkred;
+    text-align: center;
+
+    animation-name: cred-input-load;
+    animation-duration: 2s;
+    
+}
+.cred-input::placeholder{
+    opacity: .4;
+}
+.cred-input:hover::placeholder{
+    opacity: 0.6;
+}
+.cred-input:focus{
+    outline: none;
+    border-color: red;
+}
+
+@keyframes cred-input-load{
+    0% {opacity: 0%;
+        position: relative;
+        top: 100px;}
+    50% {opacity: 0%;
+        position: relative;
+         top: 100px;} 
+    100%{opacity: 100%;
+        position: relative;
+         top: 0;}
+}
+
+
+.log-btn{
+    display: block;
+    margin: 15px;
+    font-size: large;
+    color: red;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: darkred;
+
+    animation-name: log-btn-load;
+    animation-duration: 3s;
+    
+}
+.log-btn:visited{
+    color: red;
+    border-color: darkred;
+}
+.log-btn:hover{
+    border-color: red;
+}
+.log-btn:active{
+    color: white;
+    border-color: white;
+}
+
+@keyframes log-btn-load{
+    0% {opacity: 0%;
+        position: relative;
+        top: 100px;}
+    50%{opacity: 0%;
+        position: relative;
+        top: 100px}
+    100%{opacity: 100%;
+         position: relative;
+         top: 0;}
+}
+
+.nav-p{
+    margin: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    color: darkred;
+    background-color: transparent;
+    border: none;
+    justify-self: center;
+    align-self: center;
+
+    animation-name: nav-p-load;
+    animation-duration: 4s;
+}
+.nav-p:visited{
+    color: red;
+}
+.nav-p:hover{
+    color: red;
+}
+.nav-p:active{
+    color: white;
+}
+
+@keyframes nav-p-load{
+    0%{opacity: 0%;}
+    50%{opacity: 0%;}
+}

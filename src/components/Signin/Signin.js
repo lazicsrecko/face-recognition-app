@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Signin.css';
+import '../Sign&Reg.css';
 
 const Signin = (props) => {
     const { onRouteChange, loadUser } = props;
@@ -35,13 +35,15 @@ const Signin = (props) => {
 
     return (
         <div className="center-div"> 
-            <input onChange={onEmailChange} className="cred-input" type="email" name="email-address" id="email-address" placeholder="EMAIL" />
-        
-            <input onChange={onPasswordChange} className="cred-input" type="password" name="password" id="password" placeholder="PASSWORD" />
-        
-            <input onClick={onSubmitSignIn} className="log-btn" type="submit" value="Sign In" />
-        
-            <p onClick={() => onRouteChange('register')} className="nav-p">Register</p>
+            <div className="inder-div">
+                <input onChange={onEmailChange} className="cred-input" type="email" name="email-address" id="email-address" placeholder="EMAIL" />
+            
+                <input onChange={onPasswordChange} className="cred-input" type="password" name="password" id="password" placeholder="PASSWORD" />
+            
+                <input onClick={onSubmitSignIn} className="log-btn" type="submit" value="Sign In" />
+            
+                <p onClick={() => onRouteChange('register')} className="nav-p">Register</p>
+            </div>
         </div>
     )
 }
