@@ -1,6 +1,10 @@
 .App {
-    background-color: #060606;
+    background-image: url(../public/looping-bacground.jpg);
+    background-repeat: repeat;
     text-align: center;
+    position: absolute;
+    left: 0; right: 0; bottom: 0; top: 0;
+    margin: auto;
 }
 
 .center {
@@ -8,3 +12,9 @@
     justify-content: center;
 }
 
+@media only screen and (max-width: 600px){
+    .App{
+        background-color: #060606;
+        background-image: none;
+    }
+}

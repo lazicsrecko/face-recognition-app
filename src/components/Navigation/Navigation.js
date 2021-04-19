@@ -1,12 +1,15 @@
 import React from 'react';
+import './Nav.css';
 
 const Navigation = (props) => {
     const { onRouteChange, isSignedIn } = props;
     if (isSignedIn) {
         return (
-            <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <p onClick={() => onRouteChange('signout')} className='p3 link dim underline pa3 pointer'>Sign Out</p>
-            </nav>
+            <div className="div-nav">
+                <nav className="nav-bar">
+                    <p onClick={() => onRouteChange('signout')} className='nav-btn'>Sign Out</p>
+                </nav>
+            </div>
         )
     } else {
         return null

@@ -56,10 +56,12 @@
 }
 .cred-input:hover::placeholder{
     opacity: 0.6;
+    
 }
 .cred-input:focus{
     outline: none;
     border-color: red;
+    transition: 0.5s;
 }
 
 @keyframes cred-input-load{
@@ -126,6 +128,7 @@
 }
 .nav-p:hover{
     color: red;
+    transition: 0.5s;
 }
 .nav-p:active{
     color: white;
