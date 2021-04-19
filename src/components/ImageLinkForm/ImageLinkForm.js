@@ -6,7 +6,7 @@ const ImageLinkForm = (props) => {
 
     return (
         <div className="div-link">
-            <p>
+            <p className="link-p">
                 This Magic Brain will detect faces in your pictures. Give it a try!
             </p>
             <div>
