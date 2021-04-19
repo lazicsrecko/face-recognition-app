@@ -98,7 +98,7 @@ function App() {
     <div className="App">
       <Navigation isSignedIn={isSignedIn} onRouteChange={onRouteChange} />
       {route === 'home' ?
-        <div>
+        <div className="main-div">
           <Rank userName={user.name} userEntries={user.entries} />
           <ImageLinkForm onInputChange={onInputChange} onButtonSubmit={onSubmit} />
           <FaceRecognition box={box} imageUrl={imageUrl} />

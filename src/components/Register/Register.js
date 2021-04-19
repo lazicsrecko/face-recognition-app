@@ -36,19 +36,19 @@ const Register = (props) => {
             })
     }
     return (
-        <div className="center-div"> 
-            <div className="inner-div">
-                <input onChange={onNameChange} className="cred-input" type="text" name="name" id="name" placeholder="USERNAME"/>
-            
-                <input onChange={onEmailChange} className="cred-input" type="email" name="email-address" id="email-address" placeholder="EMAIL" />
-            
-                <input onChange={onPasswordChange} className="cred-input" type="password" name="password" id="password" placeholder="PASSWORD" />
-                    
-                <input onClick={onSubmitRegister} className="log-btn" type="submit" value="Register" />
-            
-                <p onClick={() => onRouteChange('signin')} className="nav-p">I alredy have an account</p>
-            </div>
+      
+        <div className="inner-div">
+            <input onChange={onNameChange} className="cred-input" type="text" name="name" id="name" placeholder="USERNAME"/>
+        
+            <input onChange={onEmailChange} className="cred-input" type="email" name="email-address" id="email-address" placeholder="EMAIL" />
+        
+            <input onChange={onPasswordChange} className="cred-input" type="password" name="password" id="password" placeholder="PASSWORD" />
+                
+            <input onClick={onSubmitRegister} className="log-btn" type="submit" value="Register" />
+        
+            <p onClick={() => onRouteChange('signin')} className="nav-p">I alredy have an account</p>
         </div>
+       
           
     )
 }

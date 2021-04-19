@@ -1,22 +1,4 @@
 
-.center-div{
-    background-image: url("../../../public/looping-bacground.jpg");
-    background-repeat: repeat;
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media only screen and (max-width: 600px){
-    .center-div{
-        background-color: #060606;
-        background-image: none;
-    }
-}
 
 .inner-div{
     padding: 20px;
@@ -56,7 +38,7 @@
 }
 .cred-input:hover::placeholder{
     opacity: 0.6;
-    
+    transition: 0.5s;
 }
 .cred-input:focus{
     outline: none;

@@ -1,13 +1,14 @@
 import React from 'react';
+import './Rank.css';
 
 const Rank = (props) => {
     const { userName, userEntries } = props;
     return (
-        <div>
-            <div className="white f3">
+        <div className="div-rank">
+            <div>
                 {`${userName}, your currant rank is...`}
             </div>
-            <div className="white f1">
+            <div>
                 {`#${userEntries}`}
             </div>
         </div>

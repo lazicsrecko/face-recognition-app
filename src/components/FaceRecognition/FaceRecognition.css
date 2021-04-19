@@ -1,3 +1,18 @@
+.div-image{
+    display: block;
+    overflow: hidden;
+    border: 2px solid #060606;
+    border-radius: 10px;
+    width: 500px;
+    margin: 50px auto;
+}
+
+.img-cnt{
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+
 .bounding-box {
     position: absolute;
     box-shadow: 0 0 0 3px darkred inset;
@@ -10,4 +25,10 @@
     -ms-flex-pack: center;
     justify-content: center;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px){
+    .div-image{
+        width: 200px;
+    }
 }

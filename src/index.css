@@ -2,10 +2,19 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #060606;
+  background-image: url(../images/looping-bacground.jpg);
+  background-repeat: repeat;
   color: darkred;
 }
 
 button {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px){
+  body{
+    background-color: #060606;
+    background-image: none;
+  }
+
 }

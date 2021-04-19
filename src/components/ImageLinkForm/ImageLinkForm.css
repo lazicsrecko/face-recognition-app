@@ -1,0 +1,68 @@
+.div-link{
+    margin: auto 15px;
+    color: white;
+    font-size: larger;
+}
+
+.link-input{
+    font-size: large;
+    color: white;
+    padding: 4px;
+    border: 1px solid #060606;
+    border-radius: 5px;
+    outline: none;
+    background-color: #060606;
+    width: 150px;
+}
+.link-input::placeholder{
+    opacity: .4;
+}
+.link-input:hover::placeholder{
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.dtc-btn{
+    font-size: large;
+    color: rgba(255,255,255, 70%);
+    padding: 4px;
+    border: 1px solid #060606;
+    border-radius: 5px;
+    background-color: #060606;
+    cursor: pointer;
+}
+.dtc-btn:hover{
+    color: white;
+    transition: 0.5s;
+}
+.dtc-btn-active{
+    color: #060606;
+    border-color: white;
+    background-color: white;
+}
+
+@media only screen and (max-width: 600px){
+    .link-input{
+        border-radius: 0;
+        border-bottom: 1px solid darkred;
+    }
+    .link-input:focus{
+        border-radius: 0;
+        border-bottom: 1px solid red;
+        transition: 0.5s;
+    }
+
+    .dtc-btn{
+        border-color: darkred;
+        background-color: darkred;
+    }
+    .dtc-btn:hover{
+        border-color: red;
+        background-color: red;
+        transition: 0.5s;
+    }
+    .dtc-btn:active{
+        border-color: white;
+        background-color: white;
+    }
+}
