@@ -31,7 +31,7 @@
     animation-duration: 1s;
 }
 
-@keyframes inder-div-load{
+@keyframes inner-div-load{
     0% {background-color: transparent;}
 }
 
@@ -81,8 +81,7 @@
     font-size: large;
     color: red;
     background-color: transparent;
-    border: 1px solid;
-    border-color: darkred;
+    
 
     animation-name: log-btn-load;
     animation-duration: 3s;
@@ -90,14 +89,11 @@
 }
 .log-btn:visited{
     color: red;
-    border-color: darkred;
-}
-.log-btn:hover{
-    border-color: red;
+    
 }
 .log-btn:active{
     color: white;
-    border-color: white;
+    
 }
 
 @keyframes log-btn-load{

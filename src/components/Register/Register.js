@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Sign&Reg.css'
+import '../../components/Sign&Reg.css'
 
 const Register = (props) => {
     const { onRouteChange, loadUser } = props;
@@ -37,7 +37,7 @@ const Register = (props) => {
     }
     return (
         <div className="center-div"> 
-            <div className="inder-div">
+            <div className="inner-div">
                 <input onChange={onNameChange} className="cred-input" type="text" name="name" id="name" placeholder="USERNAME"/>
             
                 <input onChange={onEmailChange} className="cred-input" type="email" name="email-address" id="email-address" placeholder="EMAIL" />
